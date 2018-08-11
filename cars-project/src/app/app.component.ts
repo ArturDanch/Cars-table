@@ -10,6 +10,9 @@ import * as _ from 'lodash';
 })
 export class AppComponent implements OnInit{
   public carsArray;
+  public tableDisp;
+  public  gritDisp;
+  public viewMode = 'grid';
   public ngOnInit() {
     setTimeout(() => {
       this.getCars();
@@ -21,7 +24,17 @@ export class AppComponent implements OnInit{
   public sortCars = (sortValue: string) => {
     this.carsArray =_.sortBy(this.carsArray, [sortValue])
   };
-
+  public changeView = () => {
+    if ( this.tableDisp === true ) {
+      this.tableDisp = false;
+      this.gritDisp = false;
+      this.viewMode = 'grid';
+   } else {
+      this.tableDisp = true;
+      this.gritDisp = true;
+      this.viewMode = 'table';
+    }
+  }
   public filterCars = (filterValue: string) => {
     this.getCars();
     switch (filterValue) {

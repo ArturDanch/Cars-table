@@ -12,10 +12,12 @@
     <button (click)="filterCars('ukraine')">Ukraine</button>
     <button (click)="filterCars('japan')">Japan</button>
     <button (click)="filterCars()">All</button>
+    <button (click)="changeView()">Change to {{ viewMode }} view</button>
   </div>
-  <div class="table-holder">
+  <div id="grid" class="table-holder">
     <table>
       <tr>
+        <th>N</th>
         <th (click)="sortCars('title')">Title</th>
         <th (click)="sortCars('model')">Model</th>
         <th (click)="sortCars('country')">Country</th>
@@ -23,23 +25,26 @@
         <th (click)="sortCars('price')">Price</th>
         <th>Color</th>
       </tr>
-      <tr *ngFor="let car of carsArray; let i =  index">
-        <td>{{ i + 1}}</td>
-        <td>{{car.title}}</td>
-        <td>{{car.model}}</td>
-        <td>{{car.country}}</td>
-        <td [ngClass]="{'is-new': car.year > 2012}">{{car.year}}</td>
-        <td>{{car.price}}</td>
-        <td><div class="cars-color" [ngStyle]="{backgroundColor: car.color}">
+      <ng-container *ngIf="!gritDisp">
+        <tr *ngFor="let car of carsArray; let i =  index">
+          <td>{{ i + 1}}</td>
+          <td>{{car.title}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.country}}</td>
+          <td [ngClass]="{'is-new': car.year > 2012}">{{car.year}}</td>
+          <td>{{car.price}}</td>
+          <td><div class="cars-color" [ngStyle]="{backgroundColor: car.color}">
 
-        </div></td>
-      </tr>
+          </div></td>
+        </tr>
+      </ng-container>
+
       <tr class="empty-tr" *ngIf="!carsArray">
-        <td colspan="5">loading ...</td>
+        <td colspan="7">loading ...</td>
       </tr>
     </table>
   </div>
-  <div class="cars-holder">
+  <div class="cars-holder" *ngIf="tableDisp">
     <app-car-card *ngFor="let Cars_interface of carsArray" [myCar]="Cars_interface"></app-car-card>
   </div>
 

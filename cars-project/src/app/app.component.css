@@ -38,7 +38,8 @@ html, body {
         height: 20px;
         width: 20px;
         margin-right: auto;
-        margin-left: auto; }
+        margin-left: auto;
+        border: 1px solid #0F1626; }
     .main-holder .table-holder table th {
       border-bottom: 1px solid #AB987A; }
   .main-holder .table-holder .empty-tr {
