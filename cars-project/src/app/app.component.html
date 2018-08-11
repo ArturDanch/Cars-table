@@ -1,0 +1,47 @@
+<div class="main-holder">
+  <div class="header-holder">
+    <h1>Cars Project</h1>
+  </div>
+  <div class="menu-holder">
+    <button (click)="filterCars('new')">New</button>
+    <button (click)="filterCars('old')">Old</button>
+    <button (click)="filterCars('expensive')">Expensive</button>
+    <button (click)="filterCars('germany')">Germany</button>
+    <button (click)="filterCars('italy')">Italy</button>
+    <button (click)="filterCars('france')">France</button>
+    <button (click)="filterCars('ukraine')">Ukraine</button>
+    <button (click)="filterCars('japan')">Japan</button>
+    <button (click)="filterCars()">All</button>
+  </div>
+  <div class="table-holder">
+    <table>
+      <tr>
+        <th (click)="sortCars('title')">Title</th>
+        <th (click)="sortCars('model')">Model</th>
+        <th (click)="sortCars('country')">Country</th>
+        <th (click)="sortCars('year')">Year</th>
+        <th (click)="sortCars('price')">Price</th>
+        <th>Color</th>
+      </tr>
+      <tr *ngFor="let car of carsArray; let i =  index">
+        <td>{{ i + 1}}</td>
+        <td>{{car.title}}</td>
+        <td>{{car.model}}</td>
+        <td>{{car.country}}</td>
+        <td [ngClass]="{'is-new': car.year > 2012}">{{car.year}}</td>
+        <td>{{car.price}}</td>
+        <td><div class="cars-color" [ngStyle]="{backgroundColor: car.color}">
+
+        </div></td>
+      </tr>
+      <tr class="empty-tr" *ngIf="!carsArray">
+        <td colspan="5">loading ...</td>
+      </tr>
+    </table>
+  </div>
+  <div class="cars-holder">
+    <app-car-card *ngFor="let Cars_interface of carsArray" [myCar]="Cars_interface"></app-car-card>
+  </div>
+
+</div>
+

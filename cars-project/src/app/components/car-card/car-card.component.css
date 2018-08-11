@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0; }
+
+.car-container {
+  width: 140px;
+  height: 240px;
+  border: 1px solid #AB987A;
+  box-shadow: 2px 3px 13px #AB987A;
+  margin: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition-duration: 0.1s;
+  padding: 0 20px; }
+  .car-container .car-title {
+    padding: 20px 0 0 0; }
+  .car-container .color {
+    margin: 10px auto;
+    height: 35px;
+    border: 1px solid #AB987A; }
+  .car-container ul, .car-container li {
+    text-align: left;
+    padding: 0;
+    list-style-type: none; }
+    .car-container ul li, .car-container li li {
+      padding: 2px 0; }
+    .car-container ul span, .car-container li span {
+      display: inline-block;
+      float: right; }
+    .car-container ul .price, .car-container li .price {
+      color: #52c4ab; }
+  .car-container:hover {
+    box-shadow: 0 0 5px #AB987A;
+    top: 2px;
+    left: 3px;
+    background-color: #ffffff; }
+    .car-container:hover .color {
+      border: 0;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      border-bottom: 1px solid #AB987A;
+      border-top: 1px solid #AB987A; }
+
+/*# sourceMappingURL=car-card.component.css.map */

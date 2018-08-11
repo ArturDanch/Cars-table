@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0; }
+
+.main-holder {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  font-family: sans-serif;
+  color: #0F1626;
+  background-color: #F5F5F5; }
+  .main-holder .header-holder h1 {
+    margin: 0;
+    padding: 20px 0; }
+  .main-holder .menu-holder {
+    margin: 30px 0; }
+    .main-holder .menu-holder button {
+      width: 120px;
+      margin: 2px 10px;
+      border: 1px solid #AB987A;
+      padding: 5px 20px;
+      background-color: #F5F5F5;
+      color: #52c4ab;
+      font-size: 14px;
+      font-weight: bold;
+      outline: none;
+      cursor: pointer; }
+  .main-holder .table-holder table {
+    width: 100%;
+    border-collapse: collapse; }
+    .main-holder .table-holder table tr:nth-child(even) {
+      background-color: #ffffff; }
+    .main-holder .table-holder table th, .main-holder .table-holder table td {
+      padding: 10px; }
+      .main-holder .table-holder table th .cars-color, .main-holder .table-holder table td .cars-color {
+        height: 20px;
+        width: 20px;
+        margin-right: auto;
+        margin-left: auto; }
+    .main-holder .table-holder table th {
+      border-bottom: 1px solid #AB987A; }
+  .main-holder .table-holder .empty-tr {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #AB987A; }
+  .main-holder .table-holder .is-new {
+    color: #52c4ab; }
+  .main-holder .cars-holder {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+
+/*# sourceMappingURL=app.component.css.map */
